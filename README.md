@@ -10,6 +10,6 @@
 
 ### Steps
 
-- Clone this [https://github.com/YumeT023/builder-pattern-YumeT023](repository)
+- Clone this [repository](https://github.com/YumeT023/builder-pattern-YumeT023)
 - Run `npm install` to install the dependencies
 - Run `npm test` to run the tests
