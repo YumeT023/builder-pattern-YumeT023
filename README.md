@@ -1,1 +1,15 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/eYTuOlgZ)
+# 🛠 Builder pattern
+
+**Builder pattern** implementation in Typescript
+
+## ⚗ Run locally
+
+### Requirements
+
+- Node.js (^18.19.0) [here](nodejs.org)
+
+### Steps
+
+- Clone this [https://github.com/YumeT023/builder-pattern-YumeT023](repository)
+- Run `npm install` to install the dependencies
+- Run `npm test` to run the tests
