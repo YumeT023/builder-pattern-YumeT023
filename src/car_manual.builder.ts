@@ -1,7 +1,7 @@
 import {Builder} from "./builder.interface";
 import {CarManual} from "./car_manual";
-import {DEFAULT_CAR_SEATS} from "./constants";
-import {STANDARD_ENGINE, SportEngine} from "./sport_engine";
+import {SportEngine} from "./sport_engine";
+import {DEFAULT_CAR_SEATS, STANDARD_ENGINE} from "./constants";
 
 export class CarManualBuilder implements Builder<CarManual> {
   private _carManual: CarManual;
