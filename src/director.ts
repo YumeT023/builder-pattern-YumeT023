@@ -1,20 +1,24 @@
 import {Builder} from "./builder.interface";
-import {SportEngine} from "./sport_engine";
+import {GPSNavigator} from "./gps_navigator";
+import {TripComputer} from "./trip_computer";
+import {Engine} from "./engine";
 
 export class Director {
-  makeSUV(builder: Builder) {
-    builder.reset();
-    builder.setSeats(4);
-    builder.setEngine(new SportEngine("SUV"));
-    builder.setTripComputer(true);
-    builder.setGPS(true);
+  constructSportsCar(builder: Builder) {
+    builder.setSeats(2);
+    builder.setEngine(new Engine("sport car"));
+    builder.setTripComputer(new TripComputer());
   }
 
-  constructSportsCar(builder: Builder) {
-    builder.reset();
+  constructCityCar(builder: Builder) {
     builder.setSeats(2);
-    builder.setEngine(new SportEngine("Sport Car Engine"));
-    builder.setTripComputer(false);
-    builder.setGPS(true);
+    builder.setTripComputer(new TripComputer());
+    builder.setEngine(new Engine("city car"));
+    builder.setGpsNavigator(new GPSNavigator("city location"));
+  }
+
+  constructSUV(builder: Builder) {
+    builder.setSeats(4);
+    builder.setGpsNavigator(new GPSNavigator("suv route"));
   }
 }

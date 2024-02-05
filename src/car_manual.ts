@@ -1,8 +1,12 @@
-import {SportEngine} from "./sport_engine";
+import {GPSNavigator} from "./gps_navigator";
+import {TripComputer} from "./trip_computer";
+import {Engine} from "./engine";
 
 export class CarManual {
-  seats: number;
-  engine: SportEngine;
-  hasTripComputer: boolean;
-  hasGPS: boolean;
+  constructor(
+    public seats: number,
+    public engine: Engine,
+    public tripComputer: TripComputer | null,
+    public gpsNavigator: GPSNavigator | null
+  ) {}
 }

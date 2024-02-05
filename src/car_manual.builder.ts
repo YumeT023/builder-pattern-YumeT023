@@ -1,50 +1,53 @@
 import {Builder} from "./builder.interface";
+import {GPSNavigator} from "./gps_navigator";
+import {TripComputer} from "./trip_computer";
+import {Engine} from "./engine";
 import {CarManual} from "./car_manual";
-import {SportEngine} from "./sport_engine";
 import {DEFAULT_CAR_SEATS, STANDARD_ENGINE} from "./constants";
 
 export class CarManualBuilder implements Builder<CarManual> {
-  private _carManual: CarManual;
-
-  constructor() {
-    this._carManual = this._createBaseManual();
-  }
+  private seats!: number;
+  private engine!: Engine;
+  private tripComputer!: TripComputer | null;
+  private gpsNavigator!: GPSNavigator | null;
 
   /**
-   * @internal impl
+   * init/reinit
    */
-  private _createBaseManual() {
-    const car = new CarManual();
-    car.seats = DEFAULT_CAR_SEATS;
-    car.engine = STANDARD_ENGINE;
-    car.hasTripComputer = false;
-    car.hasGPS = false;
-    return car;
+  private initialize() {
+    this.seats = DEFAULT_CAR_SEATS;
+    this.engine = STANDARD_ENGINE;
+    this.tripComputer = null;
+    this.gpsNavigator = null;
+  }
+
+  constructor() {
+    this.initialize();
   }
 
   reset(): void {
-    this._carManual = this._createBaseManual();
+    this.initialize();
   }
 
   setSeats(seats: number): void {
-    this._carManual.seats = seats;
+    this.seats = seats;
   }
 
-  setEngine(engine: SportEngine): void {
-    this._carManual.engine = engine;
+  setEngine(engine: Engine): void {
+    this.engine = engine;
   }
 
-  setTripComputer(tripComputer: boolean): void {
-    this._carManual.hasTripComputer = tripComputer;
+  setTripComputer(tripComputer: TripComputer): void {
+    this.tripComputer = tripComputer;
   }
 
-  setGPS(gps: boolean): void {
-    this._carManual.hasGPS = gps;
+  setGpsNavigator(gpsNavigator: GPSNavigator): void {
+    this.gpsNavigator = gpsNavigator;
   }
 
   build(): CarManual {
-    const carManual = this._carManual;
+    const manual = new CarManual(this.seats, this.engine, this.tripComputer!, this.gpsNavigator!);
     this.reset();
-    return carManual;
+    return manual;
   }
 }

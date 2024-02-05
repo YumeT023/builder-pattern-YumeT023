@@ -1,5 +1,5 @@
-import {SportEngine} from "./sport_engine";
+import {Engine} from "./engine";
 
 export const DEFAULT_CAR_SEATS = 4;
 
-export const STANDARD_ENGINE = new SportEngine("standard");
+export const STANDARD_ENGINE = new Engine("standard");

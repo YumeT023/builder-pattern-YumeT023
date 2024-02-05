@@ -1,3 +1,3 @@
-export class SportEngine {
+export class Engine {
   constructor(public name: string) {}
 }
