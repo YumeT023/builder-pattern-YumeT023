@@ -1,0 +1,14 @@
+{
+  "name": "impl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "style:format": "prettier -w ."
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "vitest": "^1.2.2"
+  }
+}
