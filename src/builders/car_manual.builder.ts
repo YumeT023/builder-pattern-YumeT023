@@ -1,9 +1,7 @@
-import {Builder} from "./builder.interface";
-import {GPSNavigator} from "./gps_navigator";
-import {TripComputer} from "./trip_computer";
-import {Engine} from "./engine";
-import {CarManual} from "./car_manual";
-import {DEFAULT_CAR_SEATS, STANDARD_ENGINE} from "./constants";
+import {Builder} from "../interfaces";
+import {GPSNavigator, TripComputer, Engine} from "../components";
+import {CarManual} from "../car";
+import {DEFAULT_CAR_SEATS, STANDARD_ENGINE} from "../constants";
 
 export class CarManualBuilder implements Builder<CarManual> {
   private seats!: number;

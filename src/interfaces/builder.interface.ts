@@ -1,6 +1,4 @@
-import {GPSNavigator} from "./gps_navigator";
-import {TripComputer} from "./trip_computer";
-import {Engine} from "./engine";
+import {GPSNavigator, TripComputer, Engine} from "../components";
 
 export interface Builder<T = unknown> {
   reset(): void;

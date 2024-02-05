@@ -1,9 +1,9 @@
-import {Builder} from "./builder.interface";
-import {GPSNavigator} from "./gps_navigator";
-import {TripComputer} from "./trip_computer";
-import {Engine} from "./engine";
+import {Builder} from "../interfaces/builder.interface";
+import {GPSNavigator} from "../components/gps_navigator";
+import {TripComputer} from "../components/trip_computer";
+import {Engine} from "../components/engine";
 
-export class Director {
+export class CarDirector {
   constructSportsCar(builder: Builder) {
     builder.setSeats(2);
     builder.setEngine(new Engine("sport car"));

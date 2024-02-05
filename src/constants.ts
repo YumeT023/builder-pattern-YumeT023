@@ -1,4 +1,4 @@
-import {Engine} from "./engine";
+import {Engine} from "./components";
 
 export const DEFAULT_CAR_SEATS = 4;
 

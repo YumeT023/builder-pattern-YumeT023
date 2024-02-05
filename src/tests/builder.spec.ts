@@ -1,15 +1,14 @@
 import {describe, it, expect} from "vitest";
-import {Director} from "../director";
-import {CarBuilder} from "../car.builder";
-import {Engine} from "../engine";
+
+import {CarBuilder} from "../builders";
+import {CarDirector} from "../director";
+import {TripComputer, GPSNavigator, Engine} from "../components";
 import {Car} from "../car";
-import {TripComputer} from "../trip_computer";
-import {GPSNavigator} from "../gps_navigator";
 import {STANDARD_ENGINE} from "../constants";
 
 describe("Builder", () => {
   const builder = new CarBuilder();
-  const director = new Director();
+  const director = new CarDirector();
 
   it("should constructor sport car", () => {
     director.constructSportsCar(builder);
